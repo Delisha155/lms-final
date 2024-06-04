@@ -254,11 +254,11 @@
 .button-container {
     width: 80%;
     display: flex;
-    justify-content: center; /* Align items to the end (right) of the container */
-    margin-top: 20px; /* Adjust margin as needed */
+    justify-content: center;
+    margin-top: 20px; 
 }
 .full-width select {
-    width: 190%; /* Make the select element take up 100% of its container */
+    width: 190%; 
 }
 .formWrapper button[type="submit"]:hover {
     background-color: #0056b3;
@@ -276,9 +276,9 @@
         margin-left: 1%;
     }
     .formWrapper .form-group {
-        width: 100%; /* Set form groups to occupy full width on smaller screens */
+        width: 100%;
     }
     .full-width select {
-        width: 95%; /* Make the select element take up 100% of its container */
+        width: 95%; 
     }
 }

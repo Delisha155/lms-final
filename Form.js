@@ -67,7 +67,7 @@ function createForm(courseOptions, styles, logo, contact) {
     const formContainer = document.createElement('div');
     formContainer.id = 'formContainer';
     // formContainer.classList.add(styles);
-    formContainer.classList.add('form-container'); // Add a class for styling
+    formContainer.classList.add('form-container'); 
     // formContainer.style.backgroundColor = 'blue';
     document.body.appendChild(formContainer);
     
@@ -123,10 +123,10 @@ logoAndContactContainer.appendChild(contactElement);
       
   
     const courseSelectWrapper = document.createElement('div');
-    courseSelectWrapper.className = 'form-group full-width'; // Add full-width class
+    courseSelectWrapper.className = 'form-group full-width'; 
     form.appendChild(courseSelectWrapper);
 
-    // Create course selection field
+    
     createSelectField(courseSelectWrapper, '', 'courseSelection', 'courseSelection', courseOptions);
 
     // createField(form, { placeholder: 'NEET Score:', inputType: 'number', inputId: 'neetScore', inputName: 'neetScore', required: true});
