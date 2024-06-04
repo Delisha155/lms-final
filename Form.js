@@ -78,14 +78,14 @@ const logoAndContactContainer = document.createElement('div');
 logoAndContactContainer.classList.add('logo-contact-container');
 header.appendChild(logoAndContactContainer);
 
-// Create and style logo
+
 const logoElement = document.createElement('img');
 logoElement.src = logo || 'Careerkick.png'; 
 logoElement.alt = 'Company Logo';
 logoElement.classList.add('logo-style'); 
 logoAndContactContainer.appendChild(logoElement);
 
-// Create and style contact number
+
 const contactElement = document.createElement('div');
 contactElement.textContent = 'Contact us: ' + contact; 
 contactElement.classList.add('contact-style'); 
