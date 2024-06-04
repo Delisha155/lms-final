@@ -1,4 +1,4 @@
-/* Your existing styles */
+/* Your existing styles
 .basic {
     background-color: white;
 }
@@ -18,25 +18,6 @@
     bottom: 20px;
     right: 20px;
     background-color: pink;
-}
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(5px); /* Apply a blur effect to the background */
-    z-index: 1000; /* Ensure it's behind the form */
-}
-
-.form-container {
-    position: fixed;
-    top: 50%; /* Adjust as needed */
-    left: 50%; /* Adjust as needed */
-    transform: translate(-50%, -50%);
-    background-color: white; /* Background color of the form */
-    z-index: 1001; /* Ensure it's on top of the overlay */
-    /* Add other styling for your form */
 }
 .form-popup > #studentDetailsForm > .form-group {
     padding: 20px;
@@ -149,4 +130,155 @@
 {
   margin-left: 1%;
 }
+} */
+/* Your existing styles */
+.basic {
+    background-color: white;
+}
+
+.popup {
+    display: block;
+    background-color: rebeccapurple;
+}
+
+.embed {
+    position: static;
+    background-color: red;
+}
+
+.bottom-right {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: pink;
+}
+
+.form-popup > #studentDetailsForm > .form-group {
+    padding: 20px;
+}
+
+.formWrapper {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    max-width: 300px;
+    margin: 0 auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex; 
+    flex-wrap: wrap; 
+}
+
+.formWrapper header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3px;
+    flex-direction: column;
+}
+
+.logo-contact-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%; 
+}
+
+.logo-style {
+    max-width: 50%;
+    padding: 10px;
+    height: auto;
+}
+
+.contact-style {
+    font-size: 14px;
+    color: #555;
+    margin-left: 10%;
+    margin-top: 5px;
+}
+
+.formWrapper .form-group {
+    margin-bottom: 15px;
+    width: 50%; 
+    box-sizing: border-box; 
+}
+
+.formWrapper input,
+.formWrapper select,
+.formWrapper textarea {
+    width: calc(100% - 16px); 
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px; 
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    padding: 0;
+    transform: scale(0.8);
+}
+
+.checkbox-input {
+    margin: 0;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+    transform: scale(0.8);
+}
+
+.checkbox-group label {
+    margin-left: 5px;
+}
+
+.formWrapper input::placeholder,
+.formWrapper select::placeholder,
+.formWrapper textarea::placeholder {
+    color: black;
+    font-size: 14px;
+}
+
+.formWrapper button[type="submit"] {
+    background-color: #55b80c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.button-container {
+    width: 80%;
+    display: flex;
+    justify-content: center; /* Align items to the end (right) of the container */
+    margin-top: 20px; /* Adjust margin as needed */
+}
+.full-width select {
+    width: 190%; /* Make the select element take up 100% of its container */
+}
+.formWrapper button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.submit-button {
+   justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    .formWrapper {
+        padding: 10px;
+    }
+    .contact-style {
+        margin-left: 1%;
+    }
+    .formWrapper .form-group {
+        width: 100%; /* Set form groups to occupy full width on smaller screens */
+    }
+    .full-width select {
+        width: 95%; /* Make the select element take up 100% of its container */
+    }
 }

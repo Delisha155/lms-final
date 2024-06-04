@@ -94,54 +94,55 @@ logoAndContactContainer.appendChild(contactElement);
     form.id = 'studentDetailsForm';
     form.classList.add('formWrapper');
     formContainer.appendChild(form);
-    // const logoElement = document.createElement('img');
-    // logoElement.src = logo; 
-    // logoElement.alt = 'Company Logo';
-    // logoElement.classList.add('logo-style'); 
-    // header.appendChild(logoElement);
-
-    // // Create and style contact number
-    // const contactElement = document.createElement('div');
-    // contactElement.textContent = 'Contact us: ' + contact; 
-    // contactElement.classList.add('contact-style'); 
-    // header.appendChild(contactElement);
+   
     const fieldOptions = [
         { placeholder: "Student's Name:", inputType: 'text', inputId: 'studentName', inputName: 'studentName', required: true },
+        { placeholder: "Father's Name:", inputType: 'text', inputId: 'fatherName', inputName: 'fatherName', required: true },
         { placeholder: 'Contact No.:', inputType: 'tel', inputId: 'contactNo', inputName: 'contactNo', required: true },
         { placeholder: 'OTP:', inputType: 'tel', inputId: 'contactNo', inputName: 'contactNo', required: true },
         { placeholder: 'E-mail:', inputType: 'email', inputId: 'email', inputName: 'email', required: true },
-        { placeholder: 'OTP:', inputType: 'tel', inputId: 'contactNo', inputName: 'contactNo', required: true },
+        // { placeholder: 'OTP:', inputType: 'tel', inputId: 'contactNo', inputName: 'contactNo', required: true },
         { placeholder:'Whatsapp No.:', inputType: 'tel', inputId: 'whatsappNo', inputName: 'whatsappNo', required: false },
-        { placeholder: "Father's Name:", inputType: 'text', inputId: 'fatherName', inputName: 'fatherName', required: true },
-        // { labelText: 'Address:', inputType: 'textarea', inputId: 'address', inputName: 'address', required: true },
-        // { labelText: 'City:', inputType: 'text', inputId: 'city', inputName: 'city', required: true },
-        // { labelText: 'State:', inputType: 'text', inputId: 'state', inputName: 'state', required: true }
+        { placeholder:'District:', inputType: 'text', inputId: 'city', inputName:'city', required: false },
+        { placeholder:'State:', inputType: 'text', inputId: 'state', inputName:'state', required: false },
+        { placeholder: 'NEET Score:', inputType: 'number', inputId: 'neetScore', inputName: 'neetScore', required: true},
+        { placeholder: 'NEET AIR:', inputType: 'number', inputId: 'neetScore', inputName: 'neetScore', required: true},
+    
     ];
   
     fieldOptions.forEach(option => {
         createField(form, option);
     });
-    const inlineGroup = document.createElement('div');
-      inlineGroup.className = 'inline-group';
+    // const inlineGroup = document.createElement('div');
+    //   inlineGroup.className = 'inline-group';
   
-      createField(inlineGroup, { placeholder: 'City/District:', inputType: 'text', inputId: 'city', inputName: 'city', required: true });
-      createField(inlineGroup, { placeholder: 'State:', inputType: 'text', inputId: 'state', inputName: 'state', required: true });
+    //   createField(inlineGroup, { placeholder: 'District:', inputType: 'text', inputId: 'city', inputName: 'city', required: true });
+    //   createField(inlineGroup, { placeholder: 'State:', inputType: 'text', inputId: 'state', inputName: 'state', required: true });
   
-      form.appendChild(inlineGroup);
+    //   form.appendChild(inlineGroup);
+      
   
     const courseSelectWrapper = document.createElement('div');
-    courseSelectWrapper.className = 'form-group';
-    createSelectField(courseSelectWrapper, '', 'courseSelection', 'courseSelection', courseOptions);
+    courseSelectWrapper.className = 'form-group full-width'; // Add full-width class
     form.appendChild(courseSelectWrapper);
-  
-    createField(form, { placeholder: 'NEET Score:', inputType: 'number', inputId: 'neetScore', inputName: 'neetScore', required: true});
-    createField(form, { placeholder: 'NEET AIR:', inputType: 'number', inputId: 'neetScore', inputName: 'neetScore', required: true});
+
+    // Create course selection field
+    createSelectField(courseSelectWrapper, '', 'courseSelection', 'courseSelection', courseOptions);
+
+    // createField(form, { placeholder: 'NEET Score:', inputType: 'number', inputId: 'neetScore', inputName: 'neetScore', required: true});
+    // createField(form, { placeholder: 'NEET AIR:', inputType: 'number', inputId: 'neetScore', inputName: 'neetScore', required: true});
     
     if (window.location.hostname === 'abhigyadufare.github.io') {
       createField(form, { labelText: 'Preferred College:', inputType: 'text', inputId: 'preferredCollege', inputName: 'preferredCollege', required: true });
   }
-    createCheckboxField(form, 'I agree to receive information by signing up on Careerkick services', 'agreeCheckbox');
   
+  const SelectWrapper = document.createElement('div');
+  SelectWrapper.className = 'form-group';
+    createCheckboxField(form, 'I agree to receive information by signing up on Careerkick services', 'agreeCheckbox');
+    form.appendChild(SelectWrapper);
+    const buttonContainer = document.createElement('div');
+    buttonContainer.className = 'button-container';
+    form.appendChild(buttonContainer);
     const submitButton = document.createElement('button');
       submitButton.type = 'submit';
       submitButton.textContent = 'Submit';
@@ -226,12 +227,12 @@ function createField(form, field) {
   
   function createSelectField(form, labelText, selectId, selectName, options) {
     const wrapper = document.createElement('div');
-    wrapper.className = 'form-group';
+    wrapper.className = 'form-select';
   
-    const label = document.createElement('label');
-    label.textContent = labelText;
-    label.htmlFor = selectId;
-    wrapper.appendChild(label);
+    // const label = document.createElement('label');
+    // label.textContent = labelText;
+    // label.htmlFor = selectId;
+    // wrapper.appendChild(label);
   
     const select = document.createElement('select');
     select.id = selectId;
@@ -251,7 +252,7 @@ function createField(form, field) {
   }
   function createCheckboxField(form, labelText, checkboxId) {
     const wrapper = document.createElement('div');
-    wrapper.className = 'form-group checkbox-group'; 
+    wrapper.className = 'checkbox-group'; 
 
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
